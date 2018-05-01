@@ -3,7 +3,7 @@ const
 	cheerio = require("cheerio"),
 	db = require("../models");
 
-const newsCtrl = {
+module.exports = {
 	findAll: function(req, res) {
 		db.NewsArticle
 			.find(req.query)
@@ -58,5 +58,3 @@ const newsCtrl = {
 
 	}
 }
-
-module.exports = newsCtrl;
