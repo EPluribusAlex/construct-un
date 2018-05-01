@@ -28,9 +28,9 @@ module.exports = {
 
 			axios
 				.get("https://news.un.org/en/news/region/" + sphere)
-				.then((res) => {
+				.then((page) => {
 
-					const $ = cheerio.load(res.data);
+					const $ = cheerio.load(page.data);
 
 					$("div.views-row").each((i, element) => {
 
