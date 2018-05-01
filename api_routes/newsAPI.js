@@ -12,6 +12,6 @@ router.router("/:id")
 	.get(newsCtrl.findById)
 	.put(newsCtrl.comment);
 
-router.route("/:refresh").get(newsCtrl.restock);
+router.route("/refresh").get(newsCtrl.restock);
 
-module.exports = ("newsAPI", router);
+module.exports = router;

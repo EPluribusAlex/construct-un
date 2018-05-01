@@ -3,7 +3,7 @@ const
 	cheerio = require("cheerio"),
 	db = require("../models");
 
-module.exports = {
+const newsCtrl = {
 	findAll: function(req, res) {
 		db.NewsArticle
 			.find(req.query)
@@ -26,7 +26,7 @@ module.exports = {
 		sectionScrape = function(sphere) {
 
 			axios
-				.get("*")
+				.get("https://news.un.org/en/news/region/" + sphere)
 				.then((res) => {
 
 					const $ = cheerio.load(res.data);
@@ -54,5 +54,9 @@ module.exports = {
 
 		const spheres = [africa, americas, asiaPacific, middleEast, europe];
 
+		sectionScrape(africa);
+
 	}
 }
+
+module.exports = newsCtrl;
