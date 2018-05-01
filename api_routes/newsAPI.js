@@ -4,7 +4,7 @@ const
 
 const 
 	router = express.Router();
-	newsCtrl = controllers.newsCtrl;
+	newsCtrl = require("../controllers/newsCtrl");//controllers.newsCtrl;
 
 router.route("/").get(newsCtrl.findAll)
 
