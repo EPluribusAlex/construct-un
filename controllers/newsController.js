@@ -16,6 +16,23 @@ module.exports = {
 			.then(dbModel => res.json(dbModel))
 			.catch(err => res.status(400).json(err));
 	},
+	findComments: function(req, res) {
+		console.log("WIP");
+	},
+	makeComment: function(req, res) {
+		// db.NewsArticle
+		// 	.findByIdAndUpdate(req.body.id, 
+		// 		{comment[comment.length]: {
+		// 			user: req.params.user,
+		// 			body: req.body.comment
+		// 		}})
+		// 	.then(dbModel => res.json(dbModel))
+		// 	.catch(err => res.status(400).json(err));
+		console.log("WIP");
+	},
+	removeComment: function(req, res) {
+		console.log("WIP");
+	},
 	restock: function(req, res) {
 		
 		sectionScrape = function(region) {

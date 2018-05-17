@@ -12,7 +12,13 @@ router.route("/").get(news.findAll);
 router.route("/refresh").get(news.restock);
 
 router.route("/article/:id")
-	.get(news.findById)
-	.put(comments.comment);
+	.get(news.findById);
+
+router.route("/:user/comment")
+	.get(news.findComments)
+	.put(news.makeComment);
+
+router.route("/:user/:comment")
+	.delete(news.removeComment);
 
 module.exports = router;
